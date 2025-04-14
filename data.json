@@ -9,7 +9,7 @@
     },
     {
       "title": "Jaws",
-      "cover_image": "https://upload.wikimedia.org/wikipedia/en/e/eb/JawsMoviePoster.jpg",
+      "cover_image": "https://m.media-amazon.com/images/I/616z7DnWGmL._AC_UF894,1000_QL80_.jpg",
       "year": 1975,
       "director": "Steven Spielberg",
       "genres": ["Thriller", "Adventure"],
@@ -17,7 +17,7 @@
     },
     {
       "title": "The Godfather",
-      "cover_image": "https://upload.wikimedia.org/wikipedia/en/1/1c/Godfather_ver1.jpg",
+      "cover_image": "https://m.media-amazon.com/images/M/MV5BNGEwYjgwOGQtYjg5ZS00Njc1LTk2ZGEtM2QwZWQ2NjdhZTE5XkEyXkFqcGc@._V1_.jpg",
       "year": 1972,
       "director": "Francis Ford Coppola",
       "genres": ["Crime", "Drama"],
@@ -57,7 +57,7 @@
     },
     {
       "title": "Blade Runner",
-      "cover_image": "https://upload.wikimedia.org/wikipedia/en/5/53/Blade_Runner_poster.jpg",
+      "cover_image": "https://m.media-amazon.com/images/I/71cn8pGHd6L._AC_UF894,1000_QL80_.jpg",
       "year": 1982,
       "director": "Ridley Scott",
       "genres": ["Science Fiction", "Thriller"],
@@ -65,7 +65,7 @@
     },
     {
       "title": "E.T. the Extra-Terrestrial",
-      "cover_image": "https://upload.wikimedia.org/wikipedia/en/6/66/E_t_the_extra_terrestrial_ver3.jpg",
+      "cover_image": "https://i.ebayimg.com/00/s/MTUwMFgxMDEy/z/2g4AAOSwo4pYPjW2/$_57.JPG?set_id=8800005007",
       "year": 1982,
       "director": "Steven Spielberg",
       "genres": ["Science Fiction", "Family"],

@@ -55,8 +55,6 @@ let titles = [
 let movie_cards = [];
 let json_data = [];
 
-
-
 // Your final submission should have much more data than this, and
 // you should use more than just an array of strings to store it all.
 
@@ -71,9 +69,9 @@ function showCards() {
   //   movie_cards.length
   for (let i = 0; i < 10; i++) {
     let card = movie_cards[i];
-    console.log(card)
+    console.log(card);
     let title = card.title;
-    let imageURL = card.cover_photo;
+    let imageURL = card.cover_image;
     console.log("printing the title: ", title);
     console.log("printing the image url: ", imageURL);
 
@@ -81,29 +79,10 @@ function showCards() {
     editCardContent(nextCard, title, imageURL); // Edit title and image on the cloned template card
     cardContainer.appendChild(nextCard); // Add new card to the container
   }
-  //   for (let i = 0; i < titles.length; i++) {
-  //     let title = titles[i];
-
-  //     // This part of the code doesn't scale very well! After you add your
-  //     // own data, you'll need to do something totally different here.
-  //     let imageURL = "";
-  //     if (i == 0) {
-  //       imageURL = FRESH_PRINCE_URL;
-  //     } else if (i == 1) {
-  //       imageURL = CURB_POSTER_URL;
-  //     } else if (i == 2) {
-  //       imageURL = EAST_LOS_HIGH_POSTER_URL;
-  //     }
-
-  //     const nextCard = templateCard.cloneNode(true); // Copy the template card
-  //     editCardContent(nextCard, title, imageURL); // Edit title and image
-  //     cardContainer.appendChild(nextCard); // Add new card to the container
-  //   }
 }
 
 // edit the title and image of the card that is
 // going to be displayed.
-
 function editCardContent(card, newTitle, newImageURL) {
   card.style.display = "block";
 
@@ -121,41 +100,39 @@ function editCardContent(card, newTitle, newImageURL) {
 }
 
 async function init() {
-    // fetching json data from the data.json local file
-    // await first, before moving to the next step.
-    await fetch("data.json")
-      .then((response) => response.json())
-      .then((json) => (json_data = json));
-  
-    console.log("setting the fetched data to an array of objects");
-    
-    for (let i = 0; i < json_data.length; i++) {
-      // creating an object for each movie card
-      // and pushing it to the movie_cards array
-      let movie_card = {
-        title: json_data[i].title,
-        cover_image: json_data[i].cover_image,
-        director: json_data[i].director,
-        year: json_data[i].year,
-        genres: json_data[i].genres,
-        main_actors: json_data[i].main_actors,
-      };
-      //pushing the new created movie card object
-      //to our list of movie cards.
-      console.log("new movie card:"+movie_card);
-      movie_cards.push(movie_card);
-    }
-    //checking for one movie card.
-    console.log(movie_cards[0]);
+  // fetching json data from the data.json local file
+  // await first, before moving to the next step.
+  await fetch("data.json")
+    .then((response) => response.json())
+    .then((json) => (json_data = json));
+
+  console.log("setting the fetched data to an array of objects");
+
+  for (let i = 0; i < json_data.length; i++) {
+    // creating an object for each movie card
+    // and pushing it to the movie_cards array
+    let movie_card = {
+      title: json_data[i].title,
+      cover_image: json_data[i].cover_image,
+      director: json_data[i].director,
+      year: json_data[i].year,
+      genres: json_data[i].genres,
+      main_actors: json_data[i].main_actors,
+    };
+    //pushing the new created movie card object
+    //to our list of movie cards.
+    console.log("new movie card:" + movie_card);
+    movie_cards.push(movie_card);
+  }
+  //checking for one movie card.
+  console.log("Finished seting up the cards\n");
 }
 
-// This calls the addCards() function when the page is first loaded
-
-document.addEventListener("DOMContentLoaded", async()=>{
-    await init();
-    showCards();
+// calling our initialization method and display cards, once the page is loaded.
+document.addEventListener("DOMContentLoaded", async () => {
+  await init();
+  showCards();
 });
-
 
 function quoteAlert() {
   console.log("Button Clicked!");
@@ -164,13 +141,7 @@ function quoteAlert() {
   );
 }
 
-// dummy method, we will have to clean it.
 function removeLastCard() {
-  // titles.pop(); // Remove last item in titles array
-  // showCards(); // Call showCards again to refresh
-  console.log("Button Clicked YEET!");
-  console.log(json_data);
+  titles.pop(); // Remove last item in titles array
+  showCards(); // Call showCards again to refresh
 }
-
-//   initializing methods
-// init();
