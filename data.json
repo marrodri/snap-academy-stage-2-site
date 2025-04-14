@@ -1,0 +1,90 @@
+[
+    {
+      "title": "Star Wars: Episode IV – A New Hope",
+      "cover_image": "https://upload.wikimedia.org/wikipedia/en/8/87/StarWarsMoviePoster1977.jpg",
+      "year": 1977,
+      "director": "George Lucas",
+      "genres": ["Science Fiction", "Action", "Adventure"],
+      "main_actors": ["Mark Hamill", "Harrison Ford"]
+    },
+    {
+      "title": "Jaws",
+      "cover_image": "https://m.media-amazon.com/images/I/616z7DnWGmL._AC_UF894,1000_QL80_.jpg",
+      "year": 1975,
+      "director": "Steven Spielberg",
+      "genres": ["Thriller", "Adventure"],
+      "main_actors": ["Roy Scheider", "Robert Shaw"]
+    },
+    {
+      "title": "The Godfather",
+      "cover_image": "https://m.media-amazon.com/images/M/MV5BNGEwYjgwOGQtYjg5ZS00Njc1LTk2ZGEtM2QwZWQ2NjdhZTE5XkEyXkFqcGc@._V1_.jpg",
+      "year": 1972,
+      "director": "Francis Ford Coppola",
+      "genres": ["Crime", "Drama"],
+      "main_actors": ["Marlon Brando", "Al Pacino"]
+    },
+    {
+      "title": "Rocky",
+      "cover_image": "https://upload.wikimedia.org/wikipedia/en/1/18/Rocky_poster.jpg",
+      "year": 1976,
+      "director": "John G. Avildsen",
+      "genres": ["Drama", "Sports"],
+      "main_actors": ["Sylvester Stallone", "Talia Shire"]
+    },
+    {
+      "title": "Alien",
+      "cover_image": "https://upload.wikimedia.org/wikipedia/en/c/c3/Alien_movie_poster.jpg",
+      "year": 1979,
+      "director": "Ridley Scott",
+      "genres": ["Science Fiction", "Horror"],
+      "main_actors": ["Sigourney Weaver", "Tom Skerritt"]
+    },
+    {
+      "title": "Taxi Driver",
+      "cover_image": "https://upload.wikimedia.org/wikipedia/en/3/33/Taxi_Driver_%281976_film_poster%29.jpg",
+      "year": 1976,
+      "director": "Martin Scorsese",
+      "genres": ["Drama", "Thriller"],
+      "main_actors": ["Robert De Niro", "Jodie Foster"]
+    },
+    {
+      "title": "Back to the Future",
+      "cover_image": "https://upload.wikimedia.org/wikipedia/en/d/d2/Back_to_the_Future.jpg",
+      "year": 1985,
+      "director": "Robert Zemeckis",
+      "genres": ["Science Fiction", "Adventure", "Comedy"],
+      "main_actors": ["Michael J. Fox", "Christopher Lloyd"]
+    },
+    {
+      "title": "Blade Runner",
+      "cover_image": "https://m.media-amazon.com/images/I/71cn8pGHd6L._AC_UF894,1000_QL80_.jpg",
+      "year": 1982,
+      "director": "Ridley Scott",
+      "genres": ["Science Fiction", "Thriller"],
+      "main_actors": ["Harrison Ford", "Sean Young"]
+    },
+    {
+      "title": "E.T. the Extra-Terrestrial",
+      "cover_image": "https://i.ebayimg.com/00/s/MTUwMFgxMDEy/z/2g4AAOSwo4pYPjW2/$_57.JPG?set_id=8800005007",
+      "year": 1982,
+      "director": "Steven Spielberg",
+      "genres": ["Science Fiction", "Family"],
+      "main_actors": ["Henry Thomas", "Drew Barrymore"]
+    },
+    {
+      "title": "The Shining",
+      "cover_image": "https://upload.wikimedia.org/wikipedia/en/1/1d/The_Shining_%281980%29_U.K._release_poster_-_The_tide_of_terror_that_swept_America_IS_HERE.jpg",
+      "year": 1980,
+      "director": "Stanley Kubrick",
+      "genres": ["Horror", "Thriller"],
+      "main_actors": ["Jack Nicholson", "Shelley Duvall"]
+    },
+    {
+      "title": "Pulp Fiction",
+      "cover_image": "https://upload.wikimedia.org/wikipedia/en/3/3b/Pulp_Fiction_%281994%29_poster.jpg",
+      "year": 1994,
+      "director": "Quentin Tarantino",
+      "genres": ["Crime", "Drama"],
+      "main_actors": ["John Travolta", "Samuel L. Jackson"]
+    }
+  ]

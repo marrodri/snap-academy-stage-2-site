@@ -23,6 +23,9 @@
  *
  */
 
+/**
+ * Predefined data from template; delete this later.
+ */
 const FRESH_PRINCE_URL =
   "https://upload.wikimedia.org/wikipedia/en/3/33/Fresh_Prince_S1_DVD.jpg";
 const CURB_POSTER_URL =
@@ -30,12 +33,23 @@ const CURB_POSTER_URL =
 const EAST_LOS_HIGH_POSTER_URL =
   "https://static.wikia.nocookie.net/hulu/images/6/64/East_Los_High.jpg";
 
-// This is an array of strings (TV show titles)
-let titles = [
-  "Fresh Prince of Bel Air",
-  "Curb Your Enthusiasm",
-  "East Los High",
-];
+// TODO:
+/**
+* 3.- create a quick form that you can add a new movie.
+* 4.- create header and footer for better accessibility and sidebar.
+* 5.- create a search bar to filter the movies(this should be on the header).
+* 6.- a sidebar with filter options.
+
+*/
+
+
+/**
+ * Instatiating the required variables.
+ */
+
+let movie_cards = [];
+let json_data = [];
+
 // Your final submission should have much more data than this, and
 // you should use more than just an array of strings to store it all.
 
@@ -43,46 +57,110 @@ let titles = [
 function showCards() {
   const cardContainer = document.getElementById("card-container");
   cardContainer.innerHTML = "";
+  //select the .card element structure from html
   const templateCard = document.querySelector(".card");
 
-  for (let i = 0; i < titles.length; i++) {
-    let title = titles[i];
-
-    // This part of the code doesn't scale very well! After you add your
-    // own data, you'll need to do something totally different here.
-    let imageURL = "";
-    if (i == 0) {
-      imageURL = FRESH_PRINCE_URL;
-    } else if (i == 1) {
-      imageURL = CURB_POSTER_URL;
-    } else if (i == 2) {
-      imageURL = EAST_LOS_HIGH_POSTER_URL;
-    }
+  console.log("calling showCards method");
+  //   movie_cards.length
+  for (let i = 0; i < 10; i++) {
+    let card = movie_cards[i];
+    console.log(card);
+    let title = card.title;
+    let imageURL = card.cover_image;
+    let releaseYear = card.year;
+    let genres = card.genres;
+    let mainActors = card.main_actors;
+    let director = card.director;
+    console.log("printing the title: ", title);
+    console.log("printing the image url: ", imageURL);
 
     const nextCard = templateCard.cloneNode(true); // Copy the template card
-    editCardContent(nextCard, title, imageURL); // Edit title and image
+    editCardContent(nextCard, title, imageURL, releaseYear, 
+        genres, mainActors, director); // Edit title and image on the cloned template card
     cardContainer.appendChild(nextCard); // Add new card to the container
   }
 }
 
-function editCardContent(card, newTitle, newImageURL) {
-  card.style.display = "block";
+// edit the title and image of the card that is
+// going to be displayed.
+function editCardContent(card, newTitle, newImageURL, newReleaseYear, newGenres, newMainActors, newDirector) {
+    //the the display for the card
+    card.style.display = "block";
 
-  const cardHeader = card.querySelector("h2");
-  cardHeader.textContent = newTitle;
+    // set the title for the card
+    const cardHeader = card.querySelector("#title");
+    cardHeader.textContent = newTitle;
 
-  const cardImage = card.querySelector("img");
-  cardImage.src = newImageURL;
-  cardImage.alt = newTitle + " Poster";
+    //set the image in the card
+    const cardImage = card.querySelector("img");
+    cardImage.src = newImageURL;
+    cardImage.alt = newTitle + " Poster";
 
-  // You can use console.log to help you debug!
-  // View the output by right clicking on your website,
-  // select "Inspect", then click on the "Console" tab
-  console.log("new card:", newTitle, "- html: ", card);
+    //set the release year
+    const cardYear = card.querySelector("#year"); 
+    cardYear.textContent = newReleaseYear;
+
+    //set the director
+    const cardDirector = card.querySelector("#director");
+    cardDirector.textContent = newDirector;
+
+    //set the actors
+    const cardActor1 = card.querySelector("#actor1");
+    cardActor1.textContent = newMainActors[0];
+    const cardActor2 = card.querySelector("#actor2");
+    cardActor2.textContent = newMainActors[1];
+
+    //set the genres, if there's any genre added.
+    console.log("setting the genres: ", newGenres);
+    const cardGenres = card.querySelector("#genres");
+    newGenres.forEach((genre,i )=> {
+        //creating our new genre element for front-end
+        const newGenre = document.createElement("span");
+        newGenre.className="card-text";
+        newGenre.textContent = (genre+(i == newGenres.length-1? " " : ", "));
+        cardGenres.appendChild(newGenre);
+    });
+
+    // You can use console.log to help you debug!
+    // View the output by right clicking on your website,
+    // select "Inspect", then click on the "Console" tab
+    console.log("new card:", newTitle, "- html: ", card);
 }
 
-// This calls the addCards() function when the page is first loaded
-document.addEventListener("DOMContentLoaded", showCards);
+async function init() {
+  // fetching json data from the data.json local file
+  // await first, before moving to the next step.
+  await fetch("data.json")
+    .then((response) => response.json())
+    .then((json) => (json_data = json));
+
+  console.log("setting the fetched data to an array of objects");
+
+  for (let i = 0; i < json_data.length; i++) {
+    // creating an object for each movie card
+    // and pushing it to the movie_cards array
+    let movie_card = {
+      title: json_data[i].title,
+      cover_image: json_data[i].cover_image,
+      director: json_data[i].director,
+      year: json_data[i].year,
+      genres: json_data[i].genres,
+      main_actors: json_data[i].main_actors,
+    };
+    //pushing the new created movie card object
+    //to our list of movie cards.
+    console.log("new movie card:" + movie_card);
+    movie_cards.push(movie_card);
+  }
+  //checking for one movie card.
+  console.log("Finished seting up the cards\n");
+}
+
+// calling our initialization method and display cards, once the page is loaded.
+document.addEventListener("DOMContentLoaded", async () => {
+  await init();
+  showCards();
+});
 
 function quoteAlert() {
   console.log("Button Clicked!");
