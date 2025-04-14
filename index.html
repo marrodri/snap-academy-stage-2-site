@@ -10,17 +10,25 @@
 
   <body>
     <header class="main-header">
+      <!-- think about a work around with the title.
+       it can lead to confusion -->
       <h1 class="title">LA TV Shows</h1>
     </header>
     <div id="card-container"></div>
     <div class="card" style="display: none">
       <div class="card-content">
-        <h2>TV Show Title</h2>
+        <h2 id="title">TV Show Title</h2>
         <img src="" alt="TV Show Poster" />
-        <ul>
-          <li>Bullet Point 1</li>
-          <li>Bullet Point 2</li>
-          <li>Bullet Point 3</li>
+        <ul class="card-list">
+          <li>Director: <span class="card-text" id="director"></span></li>
+          <hr>
+          <li>Main Actors: <div class="card-text"><span id="actor1"></span>, <span id="actor2"></span></div></li>
+          <hr>
+          <li>Release year: <span class="card-text" id="year"></span></li>
+          <hr>
+          <!-- this one will have to do some kind of trick. Think -->
+          <li>Genres: <div id="genres"></div></li>
+          <hr>
         </ul>
       </div>
     </div>
