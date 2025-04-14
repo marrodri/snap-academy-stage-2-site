@@ -1,7 +1,6 @@
 [
     {
       "title": "Star Wars: Episode IV – A New Hope",
-      "synopsis": "A farm boy joins a rebellion to defeat an evil empire, guided by a wise mentor and a rogue pilot, using a mystical force.",
       "cover_image": "https://upload.wikimedia.org/wikipedia/en/8/87/StarWarsMoviePoster1977.jpg",
       "year": 1977,
       "director": "George Lucas",
@@ -10,7 +9,6 @@
     },
     {
       "title": "Jaws",
-      "synopsis": "A police chief, a marine biologist, and a grizzled fisherman hunt a massive great white shark terrorizing a beach town.",
       "cover_image": "https://upload.wikimedia.org/wikipedia/en/e/eb/JawsMoviePoster.jpg",
       "year": 1975,
       "director": "Steven Spielberg",
@@ -19,7 +17,6 @@
     },
     {
       "title": "The Godfather",
-      "synopsis": "The aging patriarch of a crime family transfers control to his reluctant son, sparking betrayal and power struggles.",
       "cover_image": "https://upload.wikimedia.org/wikipedia/en/1/1c/Godfather_ver1.jpg",
       "year": 1972,
       "director": "Francis Ford Coppola",
@@ -27,17 +24,7 @@
       "main_actors": ["Marlon Brando", "Al Pacino"]
     },
     {
-      "title": "M*A*S*H",
-      "synopsis": "Surgeons at a mobile army hospital during the Korean War use humor and defiance to cope with the horrors of war.",
-      "cover_image": "https://upload.wikimedia.org/wikipedia/en/0/0d/MASH_TV_series_poster.jpg",
-      "year": 1972,
-      "director": "Various (created by Larry Gelbart)",
-      "genres": ["Comedy", "Drama", "War"],
-      "main_actors": ["Alan Alda", "Wayne Rogers"]
-    },
-    {
       "title": "Rocky",
-      "synopsis": "A small-time boxer gets a rare chance to fight the heavyweight champion, training hard to prove himself.",
       "cover_image": "https://upload.wikimedia.org/wikipedia/en/1/18/Rocky_poster.jpg",
       "year": 1976,
       "director": "John G. Avildsen",
@@ -45,17 +32,7 @@
       "main_actors": ["Sylvester Stallone", "Talia Shire"]
     },
     {
-      "title": "All in the Family",
-      "synopsis": "A working-class bigot clashes with his liberal family, sparking debates on social issues in 1970s America.",
-      "cover_image": "https://upload.wikimedia.org/wikipedia/en/6/69/All_in_the_Family_title_card.jpg",
-      "year": 1971,
-      "director": "Various (created by Norman Lear)",
-      "genres": ["Comedy"],
-      "main_actors": ["Carroll O'Connor", "Jean Stapleton"]
-    },
-    {
       "title": "Alien",
-      "synopsis": "A commercial spaceship crew encounters a deadly extraterrestrial organism that hunts them one by one.",
       "cover_image": "https://upload.wikimedia.org/wikipedia/en/c/c3/Alien_movie_poster.jpg",
       "year": 1979,
       "director": "Ridley Scott",
@@ -63,26 +40,7 @@
       "main_actors": ["Sigourney Weaver", "Tom Skerritt"]
     },
     {
-      "title": "Apocalypse Now",
-      "synopsis": "A U.S. Army captain ventures into the jungle to assassinate a rogue colonel during the Vietnam War.",
-      "cover_image": "https://upload.wikimedia.org/wikipedia/en/c/c2/Apocalypse_Now_poster.jpg",
-      "year": 1979,
-      "director": "Francis Ford Coppola",
-      "genres": ["Drama", "War"],
-      "main_actors": ["Martin Sheen", "Marlon Brando"]
-    },
-    {
-      "title": "Happy Days",
-      "synopsis": "A wholesome 1950s family navigates life, love, and friendship, centered around a cool teenager and his pals.",
-      "cover_image": "https://upload.wikimedia.org/wikipedia/en/7/7c/Happy_Days_title_screen.jpg",
-      "year": 1974,
-      "director": "Various (created by Garry Marshall)",
-      "genres": ["Comedy"],
-      "main_actors": ["Ron Howard", "Henry Winkler"]
-    },
-    {
       "title": "Taxi Driver",
-      "synopsis": "A mentally unstable Vietnam veteran becomes a vigilante, obsessed with saving a young girl in New York City.",
       "cover_image": "https://upload.wikimedia.org/wikipedia/en/3/33/Taxi_Driver_%281976_film_poster%29.jpg",
       "year": 1976,
       "director": "Martin Scorsese",
@@ -91,7 +49,6 @@
     },
     {
       "title": "Back to the Future",
-      "synopsis": "A teenager is accidentally sent to 1955 in a time-traveling car, racing to fix the future and get back home.",
       "cover_image": "https://upload.wikimedia.org/wikipedia/en/d/d2/Back_to_the_Future.jpg",
       "year": 1985,
       "director": "Robert Zemeckis",
@@ -99,17 +56,7 @@
       "main_actors": ["Michael J. Fox", "Christopher Lloyd"]
     },
     {
-      "title": "The Breakfast Club",
-      "synopsis": "Five high school students from different cliques bond during a Saturday detention, revealing their true selves.",
-      "cover_image": "https://upload.wikimedia.org/wikipedia/en/5/5c/Breakfast_club.jpg",
-      "year": 1985,
-      "director": "John Hughes",
-      "genres": ["Comedy", "Drama"],
-      "main_actors": ["Molly Ringwald", "Emilio Estevez"]
-    },
-    {
       "title": "Blade Runner",
-      "synopsis": "A retired cop hunts bioengineered humanoids in a dystopian future, questioning humanity and his own existence.",
       "cover_image": "https://upload.wikimedia.org/wikipedia/en/5/53/Blade_Runner_poster.jpg",
       "year": 1982,
       "director": "Ridley Scott",
@@ -117,26 +64,7 @@
       "main_actors": ["Harrison Ford", "Sean Young"]
     },
     {
-      "title": "Cheers",
-      "synopsis": "A group of regulars at a Boston bar share laughs, love, and life lessons with the bar’s charming staff.",
-      "cover_image": "https://upload.wikimedia.org/wikipedia/en/9/94/Cheers_title_card.jpg",
-      "year": 1982,
-      "director": "Various (created by Glen and Les Charles)",
-      "genres": ["Comedy"],
-      "main_actors": ["Ted Danson", "Shelley Long"]
-    },
-    {
-      "title": "Die Hard",
-      "synopsis": "A New York cop battles terrorists led by a cunning mastermind to save hostages, including his wife, in a skyscraper.",
-      "cover_image": "https://upload.wikimedia.org/wikipedia/en/7/7e/Die_hard.jpg",
-      "year": 1988,
-      "director": "John McTiernan",
-      "genres": ["Action", "Thriller"],
-      "main_actors": ["Bruce Willis", "Alan Rickman"]
-    },
-    {
       "title": "E.T. the Extra-Terrestrial",
-      "synopsis": "A boy befriends a stranded alien, helping it return home while hiding it from government forces.",
       "cover_image": "https://upload.wikimedia.org/wikipedia/en/6/66/E_t_the_extra_terrestrial_ver3.jpg",
       "year": 1982,
       "director": "Steven Spielberg",
@@ -145,7 +73,6 @@
     },
     {
       "title": "The Shining",
-      "synopsis": "A writer descends into madness while caretaking an isolated hotel, endangering his family as supernatural forces emerge.",
       "cover_image": "https://upload.wikimedia.org/wikipedia/en/1/1d/The_Shining_%281980%29_U.K._release_poster_-_The_tide_of_terror_that_swept_America_IS_HERE.jpg",
       "year": 1980,
       "director": "Stanley Kubrick",
@@ -153,300 +80,11 @@
       "main_actors": ["Jack Nicholson", "Shelley Duvall"]
     },
     {
-      "title": "Miami Vice",
-      "synopsis": "Two undercover cops tackle drug lords and corruption in Miami’s flashy, dangerous underworld.",
-      "cover_image": "https://upload.wikimedia.org/wikipedia/en/5/5d/Miami_Vice_poster.jpg",
-      "year": 1984,
-      "director": "Various (created by Anthony Yerkovich)",
-      "genres": ["Crime", "Drama", "Action"],
-      "main_actors": ["Don Johnson", "Philip Michael Thomas"]
-    },
-    {
-      "title": "Raiders of the Lost Ark",
-      "synopsis": "An archaeologist races Nazis to find a mystical artifact, battling danger and betrayal in a global adventure.",
-      "cover_image": "https://upload.wikimedia.org/wikipedia/en/4/4c/Raiders_of_the_Lost_Ark.jpg",
-      "year": 1981,
-      "director": "Steven Spielberg",
-      "genres": ["Action", "Adventure"],
-      "main_actors": ["Harrison Ford", "Karen Allen"]
-    },
-    {
-      "title": "The Terminator",
-      "synopsis": "A cyborg assassin from the future hunts a woman whose unborn son could save humanity from machines.",
-      "cover_image": "https://upload.wikimedia.org/wikipedia/en/7/70/Terminator1984movieposter.jpg",
-      "year": 1984,
-      "director": "James Cameron",
-      "genres": ["Science Fiction", "Action"],
-      "main_actors": ["Arnold Schwarzenegger", "Linda Hamilton"]
-    },
-    {
       "title": "Pulp Fiction",
-      "synopsis": "Interwoven stories of criminals, hitmen, and a boxer collide in a nonlinear tale of violence and redemption.",
       "cover_image": "https://upload.wikimedia.org/wikipedia/en/3/3b/Pulp_Fiction_%281994%29_poster.jpg",
       "year": 1994,
       "director": "Quentin Tarantino",
       "genres": ["Crime", "Drama"],
       "main_actors": ["John Travolta", "Samuel L. Jackson"]
-    },
-    {
-      "title": "The Lion King",
-      "synopsis": "A young lion prince flees after his father’s murder, returning years later to reclaim his rightful throne.",
-      "cover_image": "https://upload.wikimedia.org/wikipedia/en/3/3d/The_Lion_King_poster.jpg",
-      "year": 1994,
-      "director": "Roger Allers, Rob Minkoff",
-      "genres": ["Animation", "Adventure", "Drama"],
-      "main_actors": ["Matthew Broderick", "Jeremy Irons"]
-    },
-    {
-      "title": "Seinfeld",
-      "synopsis": "A stand-up comedian and his quirky friends navigate absurd situations in New York City, obsessing over the mundane.",
-      "cover_image": "https://upload.wikimedia.org/wikipedia/en/4/4f/Seinfeld_logo.svg",
-      "year": 1989,
-      "director": "Various (created by Larry David, Jerry Seinfeld)",
-      "genres": ["Comedy"],
-      "main_actors": ["Jerry Seinfeld", "Julia Louis-Dreyfus"]
-    },
-    {
-      "title": "Jurassic Park",
-      "synopsis": "Scientists and guests face deadly dinosaurs when a theme park’s security fails, unleashing prehistoric chaos.",
-      "cover_image": "https://upload.wikimedia.org/wikipedia/en/e/e7/Jurassic_Park_poster.jpg",
-      "year": 1993,
-      "director": "Steven Spielberg",
-      "genres": ["Science Fiction", "Adventure"],
-      "main_actors": ["Sam Neill", "Laura Dern"]
-    },
-    {
-      "title": "The X-Files",
-      "synopsis": "Two FBI agents investigate paranormal cases, uncovering conspiracies and questioning reality itself.",
-      "cover_image": "https://upload.wikimedia.org/wikipedia/en/2/2b/X-Files_1993_logo.svg",
-      "year": 1993,
-      "director": "Various (created by Chris Carter)",
-      "genres": ["Science Fiction", "Drama", "Mystery"],
-      "main_actors": ["David Duchovny", "Gillian Anderson"]
-    },
-    {
-      "title": "Schindler's List",
-      "synopsis": "A German industrialist risks everything to save Jews during the Holocaust, turning his factory into a refuge.",
-      "cover_image": "https://upload.wikimedia.org/wikipedia/en/3/38/Schindlers_list_movie.jpg",
-      "year": 1993,
-      "director": "Steven Spielberg",
-      "genres": ["Drama", "History"],
-      "main_actors": ["Liam Neeson", "Ralph Fiennes"]
-    },
-    {
-      "title": "Friends",
-      "synopsis": "Six young adults in New York City share laughs, love, and life’s ups and downs in a tight-knit group.",
-      "cover_image": "https://upload.wikimedia.org/wikipedia/en/6/6f/Friends_logo.svg",
-      "year": 1994,
-      "director": "Various (created by David Crane, Marta Kauffman)",
-      "genres": ["Comedy"],
-      "main_actors": ["Jennifer Aniston", "Courteney Cox"]
-    },
-    {
-      "title": "Forrest Gump",
-      "synopsis": "A kind-hearted man with a low IQ lives an extraordinary life, influencing history while chasing his childhood love.",
-      "cover_image": "https://upload.wikimedia.org/wikipedia/en/6/67/Forrest_Gump_poster.jpg",
-      "year": 1994,
-      "director": "Robert Zemeckis",
-      "genres": ["Drama", "Romance"],
-      "main_actors": ["Tom Hanks", "Robin Wright"]
-    },
-    {
-      "title": "The Matrix",
-      "synopsis": "A hacker discovers reality is a simulation and joins a rebellion to fight the machines controlling humanity.",
-      "cover_image": "https://upload.wikimedia.org/wikipedia/en/c/c1/The_Matrix_Poster.jpg",
-      "year": 1999,
-      "director": "The Wachowskis",
-      "genres": ["Science Fiction", "Action"],
-      "main_actors": ["Keanu Reeves", "Laurence Fishburne"]
-    },
-    {
-      "title": "Titanic",
-      "synopsis": "A romance between a wealthy woman and a poor artist unfolds aboard the doomed Titanic, ending in tragedy.",
-      "cover_image": "https://upload.wikimedia.org/wikipedia/en/2/22/Titanic_poster.jpg",
-      "year": 1997,
-      "director": "James Cameron",
-      "genres": ["Romance", "Drama"],
-      "main_actors": ["Leonardo DiCaprio", "Kate Winslet"]
-    },
-    {
-      "title": "Goodfellas",
-      "synopsis": "A young man rises in the mob, enjoying power and wealth, but paranoia and betrayal unravel his world.",
-      "cover_image": "https://upload.wikimedia.org/wikipedia/en/7/7b/Goodfellas.jpg",
-      "year": 1990,
-      "director": "Martin Scorsese",
-      "genres": ["Crime", "Drama"],
-      "main_actors": ["Robert De Niro", "Ray Liotta"]
-    },
-    {
-      "title": "ER",
-      "synopsis": "Doctors and nurses in a Chicago hospital face life-and-death emergencies while juggling personal dramas.",
-      "cover_image": "https://upload.wikimedia.org/wikipedia/en/0/0e/ER_1994_logo.svg",
-      "year": 1994,
-      "director": "Various (created by Michael Crichton)",
-      "genres": ["Drama"],
-      "main_actors": ["Anthony Edwards", "George Clooney"]
-    },
-    {
-      "title": "Fight Club",
-      "synopsis": "A disillusioned man forms an underground fight club with a charismatic stranger, spiraling into anarchy.",
-      "cover_image": "https://upload.wikimedia.org/wikipedia/en/f/fc/Fight_Club_poster.jpg",
-      "year": 1999,
-      "director": "David Fincher",
-      "genres": ["Drama", "Thriller"],
-      "main_actors": ["Brad Pitt", "Edward Norton"]
-    },
-    {
-      "title": "The Fresh Prince of Bel-Air",
-      "synopsis": "A Philly teen moves to a wealthy L.A. suburb, shaking up his posh relatives with his streetwise attitude.",
-      "cover_image": "https://upload.wikimedia.org/wikipedia/en/3/33/Fresh_Prince_Bel_Air.jpg",
-      "year": 1990,
-      "director": "Various (created by Andy and Susan Borowitz)",
-      "genres": ["Comedy"],
-      "main_actors": ["Will Smith", "James Avery"]
-    },
-    {
-      "title": "Saving Private Ryan",
-      "synopsis": "A squad of soldiers searches for a paratrooper behind enemy lines during WWII, facing brutal combat.",
-      "cover_image": "https://upload.wikimedia.org/wikipedia/en/a/ac/Saving_Private_Ryan_poster.jpg",
-      "year": 1998,
-      "director": "Steven Spielberg",
-      "genres": ["War", "Drama"],
-      "main_actors": ["Tom Hanks", "Matt Damon"]
-    },
-    {
-      "title": "Home Alone",
-      "synopsis": "A boy accidentally left behind at Christmas outsmarts bumbling burglars to protect his family’s house.",
-      "cover_image": "https://upload.wikimedia.org/wikipedia/en/8/80/Home_Alone_poster.jpg",
-      "year": 1990,
-      "director": "Chris Columbus",
-      "genres": ["Comedy", "Family"],
-      "main_actors": ["Macaulay Culkin", "Joe Pesci"]
-    },
-    {
-      "title": "Beverly Hills, 90210",
-      "synopsis": "Teens in a wealthy zip code navigate love, friendship, and drama in and out of high school.",
-      "cover_image": "https://upload.wikimedia.org/wikipedia/en/8/8f/Beverly_Hills_90210_intertitle.png",
-      "year": 1990,
-      "director": "Various (created by Darren Star)",
-      "genres": ["Drama"],
-      "main_actors": ["Jason Priestley", "Shannen Doherty"]
-    },
-    {
-      "title": "Clueless",
-      "synopsis": "A shallow but charming teen in Beverly Hills plays matchmaker and learns about life and love.",
-      "cover_image": "https://upload.wikimedia.org/wikipedia/en/6/62/Clueless_poster.jpg",
-      "year": 1995,
-      "director": "Amy Heckerling",
-      "genres": ["Comedy", "Romance"],
-      "main_actors": ["Alicia Silverstone", "Stacey Dash"]
-    },
-    {
-      "title": "The Silence of the Lambs",
-      "synopsis": "An FBI trainee seeks a jailed cannibalistic killer’s help to catch another serial killer, racing against time.",
-      "cover_image": "https://upload.wikimedia.org/wikipedia/en/8/86/The_Silence_of_the_Lambs_poster.jpg",
-      "year": 1991,
-      "director": "Jonathan Demme",
-      "genres": ["Thriller", "Crime"],
-      "main_actors": ["Jodie Foster", "Anthony Hopkins"]
-    },
-    {
-      "title": "Buffy the Vampire Slayer",
-      "synopsis": "A teen girl battles vampires and demons as a destined slayer, balancing high school and heroism.",
-      "cover_image": "https://upload.wikimedia.org/wikipedia/en/2/2f/Buffy_The_Vampire_Slayer_logo.svg",
-      "year": 1997,
-      "director": "Various (created by Joss Whedon)",
-      "genres": ["Fantasy", "Drama", "Action"],
-      "main_actors": ["Sarah Michelle Gellar", "Nicholas Brendon"]
-    },
-    {
-      "title": "Terminator 2: Judgment Day",
-      "synopsis": "A reprogrammed cyborg protects a teen from a liquid-metal assassin to prevent a future apocalypse.",
-      "cover_image": "https://upload.wikimedia.org/wikipedia/en/8/85/Terminator2poster.jpg",
-      "year": 1991,
-      "director": "James Cameron",
-      "genres": ["Science Fiction", "Action"],
-      "main_actors": ["Arnold Schwarzenegger", "Linda Hamilton"]
-    },
-    {
-      "title": "Boyz n the Hood",
-      "synopsis": "Three friends in South Central L.A. face gang violence and tough choices as they chase their dreams.",
-      "cover_image": "https://upload.wikimedia.org/wikipedia/en/0/09/Boyz_n_the_Hood_poster.jpg",
-      "year": 1991,
-      "director": "John Singleton",
-      "genres": ["Drama", "Crime"],
-      "main_actors": ["Cuba Gooding Jr.", "Ice Cube"]
-    },
-    {
-      "title": "Twin Peaks",
-      "synopsis": "An FBI agent investigates a teen’s murder in a quirky town, uncovering dark secrets and surreal mysteries.",
-      "cover_image": "https://upload.wikimedia.org/wikipedia/en/8/84/Twin_Peaks_poster.jpg",
-      "year": 1990,
-      "director": "Various (created by David Lynch, Mark Frost)",
-      "genres": ["Mystery", "Drama"],
-      "main_actors": ["Kyle MacLachlan", "Sherilyn Fenn"]
-    },
-    {
-      "title": "The Shawshank Redemption",
-      "synopsis": "A wrongly convicted banker forms a bond with a fellow inmate, finding hope in a brutal prison.",
-      "cover_image": "https://upload.wikimedia.org/wikipedia/en/8/81/ShawshankRedemptionMoviePoster.jpg",
-      "year": 1994,
-      "director": "Frank Darabont",
-      "genres": ["Drama"],
-      "main_actors": ["Tim Robbins", "Morgan Freeman"]
-    },
-    {
-      "title": "Dazed and Confused",
-      "synopsis": "Teens in 1976 celebrate the last day of school, cruising, partying, and facing life’s next steps.",
-      "cover_image": "https://upload.wikimedia.org/wikipedia/en/7/7e/Dazed_and_confused_poster.jpg",
-      "year": 1993,
-      "director": "Richard Linklater",
-      "genres": ["Comedy", "Drama"],
-      "main_actors": ["Jason London", "Matthew McConaughey"]
-    },
-    {
-      "title": "Roseanne",
-      "synopsis": "A working-class family tackles life’s challenges with humor, love, and blunt honesty in small-town America.",
-      "cover_image": "https://upload.wikimedia.org/wikipedia/en/8/8b/Roseanne_title_card.jpg",
-      "year": 1988,
-      "director": "Various (created by Matt Williams)",
-      "genres": ["Comedy"],
-      "main_actors": ["Roseanne Barr", "John Goodman"]
-    },
-    {
-      "title": "Ghostbusters",
-      "synopsis": "Three quirky scientists start a ghost-catching business in New York, battling supernatural threats.",
-      "cover_image": "https://upload.wikimedia.org/wikipedia/en/2/2f/Ghostbusters_%281984%29_theatrical_poster.png",
-      "year": 1984,
-      "director": "Ivan Reitman",
-      "genres": ["Comedy", "Fantasy"],
-      "main_actors": ["Bill Murray", "Dan Aykroyd"]
-    },
-    {
-      "title": "Pretty Woman",
-      "synopsis": "A wealthy businessman hires a spirited escort, and their unlikely romance blossoms despite social divides.",
-      "cover_image": "https://upload.wikimedia.org/wikipedia/en/b/b7/Pretty_woman_poster.jpg",
-      "year": 1990,
-      "director": "Garry Marshall",
-      "genres": ["Romance", "Comedy"],
-      "main_actors": ["Julia Roberts", "Richard Gere"]
-    },
-    {
-      "title": "The Cosby Show",
-      "synopsis": "A Brooklyn doctor and his lawyer wife raise their lively kids, blending humor with family values.",
-      "cover_image": "https://upload.wikimedia.org/wikipedia/en/9/9e/Cosby_show.jpg",
-      "year": 1984,
-      "director": "Various (created by Bill Cosby)",
-      "genres": ["Comedy"],
-      "main_actors": ["Bill Cosby", "Phylicia Rashad"]
-    },
-    {
-      "title": "Reservoir Dogs",
-      "synopsis": "A botched heist leaves a group of thieves paranoid, suspecting a traitor as tensions boil over.",
-      "cover_image": "https://upload.wikimedia.org/wikipedia/en/0/01/Reservoir_Dogs.png",
-      "year": 1992,
-      "director": "Quentin Tarantino",
-      "genres": ["Crime", "Thriller"],
-      "main_actors": ["Harvey Keitel", "Tim Roth"]
     }
   ]
