@@ -24,22 +24,17 @@
  */
 
 
-// TODO:
-/**
-* 3.- create a quick form that you can add a new movie.
-
-*/
-
-
 /**
  * Instatiating the required variables.
  */
 
 let movie_cards = [];
 let json_data = [];
+let filters = [];
 
-// Your final submission should have much more data than this, and
-// you should use more than just an array of strings to store it all.
+/***
+ * website methods
+ */
 
 // This function adds cards the page to display the data in the array
 function showCards() {
@@ -189,39 +184,44 @@ function addNewCard(){
   // todo get the information from the form
   let form = document.getElementById("card-creator-form");
   
-  // fetching the data from the form
-  let title = form.elements["title"].value;
-  console.log("title: "+title);
-  let image_url = form.elements["cover_image_url"].value;
-  console.log("image_url: "+image_url);
+  // fetching the elements from the form
+  let title = form.elements["title"];
+  let cover_image_url = form.elements["cover_image_url"];
 
-  let year = form.elements["year"].value;
-  console.log("year: "+year);
-  
-  let director = form.elements["director"].value;
-  console.log("director: "+director);
-  
-  let actor1 = form.elements["actor1"].value;
-  console.log("actor2: "+actor1 );
-  
-  let actor2 = form.elements["actor2"].value;
-  console.log("actor2: "+actor2);
-  
-  let genre1 = form.elements["genre1"].value;
-  console.log("genre1: "+genre1);
-  
-  let genre2 = form.elements["genre2"].value;
-  console.log("genre2: "+genre2);
-  
-  let genre3 = form.elements["genre3"].value;
-  console.log("genre3: "+genre3);
-  
-  let video_url = form.elements["video_url"].value;
-  console.log("video_url: "+video_url);
+  let year = form.elements["year"];
+  let director = form.elements["director"];
+  let actor1 = form.elements["actor1"];
+  let actor2 = form.elements["actor2"];
+  let genre1 = form.elements["genre1"];
+  let genre2 = form.elements["genre2"];
+  let genre3 = form.elements["genre3"];
+  let video_url = form.elements["video_url"];
 
-  // create the new card from the form.
+  
+  // create the new card from the data inputed in the form.
+  movie_cards.push({
+    id: movie_cards.length,
+    title: title.value,
+    cover_image_url: cover_image_url.value,
+    director: director.value,
+    year: year.value,
+    genres: [genre1.value, genre2.value, genre3.value], 
+    main_actors: [actor1.value, actor2.value],
+    video_url: video_url.value,
+  })
+  showCards(); 
 
   // clear the data from the form.
+  title.value = "";
+  cover_image_url.value = "";
+  year.value = "";
+  director.value = "";
+  actor1.value = "";
+  actor2.value = "";
+  genre1.value = "";
+  genre2.value = "";
+  genre3.value = "";
+  video_url.value = "";
   
 }
 
