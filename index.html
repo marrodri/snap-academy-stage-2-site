@@ -13,14 +13,8 @@
 
   <body>
     <!-- make this static, absolute, if it's clicked outside set the module to invisible. THis is  a bonus, so focus on the main requirements. -->
-    <div id="float-module">
-
-    </div>
+    <div id="float-module"></div>
     <header class="main-header">
-      <!-- think about a work around with the title.
-       it can lead to confusion -->
-      <!-- add a text input that will work as the search bar
-         -->
       <div id="right-side">
         <div id="logo-container">
           <img id="logo-img" src="./assets/movie-trailer-img.png" alt="" />
@@ -40,17 +34,17 @@
           <h4>Search:</h4>
           <div>
             <input
+              onkeyup="searchData(this.value)"
               type="text"
               id="search-input"
-              placeholder="Search for any info..."
+              placeholder="Search through movie title, director or actor"
             />
           </div>
         </div>
         <!-- filtering options container -->
         <div id="genre-filter-container">
           <h4>Filter by genre</h4>
-          <div id="filter-options">
-          </div>
+          <div id="filter-options"></div>
         </div>
         <!-- sorting options container -->
         <div id="sort-list-container">
@@ -109,10 +103,18 @@
           <input type="text" id="title" placeholder="Movie Title" />
           <!-- movie cover link image -->
           <label for="cover_image_url">Movie Cover:</label>
-          <input type="text" id="cover_image_url" placeholder="link of movie cover image" />
+          <input
+            type="text"
+            id="cover_image_url"
+            placeholder="link of movie cover image"
+          />
           <!-- year of the movie released -->
           <label for="year">Release Year:</label>
-          <input type="text" id="year" placeholder="Release Year of the Movie" />
+          <input
+            type="text"
+            id="year"
+            placeholder="Release Year of the Movie"
+          />
           <!-- director of the movie -->
           <label for="director">Movie Director:</label>
           <input type="text" id="director" placeholder="Movie Director" />
@@ -129,9 +131,13 @@
           <label for="genre3">Genre 3:</label>
           <input type="text" id="genre3" placeholder="Movie Genre 3" />
           <!-- youtube video -->
-          
+
           <label for="video_url">Link to the very first movie trailer:</label>
-          <input type="text" id="video_url" placeholder="Link to first movie trailer" />
+          <input
+            type="text"
+            id="video_url"
+            placeholder="Link to first movie trailer"
+          />
         </form>
         <div>
           <!-- we may have to remove this one -->

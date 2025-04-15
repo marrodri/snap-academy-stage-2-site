@@ -28,10 +28,12 @@
  */
 
 let movie_cards = [];
+let searched_movie_cards = [];
 let filtered_movie_cards = [];
 let json_data = [];
 let genre_filters = [];
 let isGenreFilterActive = [];
+let isSearchModeActive = false;
 
 /***
  * Setup and update data methods
@@ -267,14 +269,29 @@ function sortCardsByYear() {
  * Search methods
  */
 
-function searchData() {
-  console.log("searching for data");
-  // when the keyboard is pressed.
-  //we will filter out the data.
-  //first we set the state to search.
-  //on the search state, just use the temporary array
-  // that is filtered, based on the search input.
-  //otherwise, if the search state is empty; go back to the original data.
+function searchData(value) {
+  //if there's an empty input, display the original data.
+  if (value === "") {
+    showCards(movie_cards);
+    isSearchModeActive = false;
+  } else {
+    //otherwise, iterate through the movie cards that fits with the entered input.
+    isSearchModeActive = true;
+    searched_movie_cards = [];
+    value = value.toLowerCase();
+    movie_cards.forEach((card) => {
+      if (
+        card.title.toLowerCase().includes(value) ||
+        card.director.toLowerCase().includes(value) ||
+        card.main_actors[0].toLowerCase().includes(value) ||
+        card.main_actors[1].toLowerCase().includes(value)
+      ) {
+        searched_movie_cards.push(card);
+      }
+    });
+
+    showCards(searched_movie_cards);
+  }
 }
 
 /***
