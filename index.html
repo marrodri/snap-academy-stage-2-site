@@ -1,40 +1,153 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Retro Shows and Films | Home</title>
-    <meta name="description" content="A Catalog of Shows Set in Los Angeles" />
+    <title>Original Movie Trailers</title>
+    <meta
+      name="description"
+      content="A Catalog of the first ever released movie trailers"
+    />
     <link rel="stylesheet" href="style.css" />
     <script type="text/javascript" src="scripts.js"></script>
-     <script type="text/javascript" src="data.json"></script>
+    <script type="text/javascript" src="data.json"></script>
   </head>
 
   <body>
     <header class="main-header">
       <!-- think about a work around with the title.
        it can lead to confusion -->
-      <h1 class="title">LA TV Shows</h1>
+      <!-- add a text input that will work as the search bar
+         -->
+      <div id="right-side">
+        <div id="logo-container">
+          <img id="logo-img" src="./assets/movie-trailer-img.png" alt="" />
+        </div>
+        <div id="title-container">
+          <h1 class="title">Original Movie Trailers</h1>
+          <h2 class="subtitle">
+            Your main source site for finding their first released movie trailer
+          </h2>
+        </div>
+      </div>
     </header>
-    <div id="card-container"></div>
+    <div class="main-body">
+      <div id="sidebar">
+        <!-- search container-->
+        <div class="sidebar-container" id="search-container">
+          <h4>Search:</h4>
+          <div>
+            <input
+              type="text"
+              id="search-input"
+              placeholder="Search for any info..."
+            />
+          </div>
+        </div>
+        <!-- filtering options container -->
+        <div id="genre-filter-container">
+          <h4>Filter by genre</h4>
+          <div id="filter-options">
+            <button>Thriller</button>
+            <button>Family</button>
+            <button>Romance</button>
+            <button>Comedy</button>
+            <button>Adventure</button>
+            <button>Science Fiction</button>
+            <button>Action</button>
+            <button>Romance</button>
+            <button>Family</button>
+            <button>Action</button>
+            <button>Science Fiction</button>
+            <button>Adventure</button>
+            <button>Comedy</button>
+          </div>
+        </div>
+        <!-- sorting options container -->
+        <div id="sort-list-container">
+          <h4>sort by</h4>
+          <div id="sort-options">
+            <button>title (a-z)</button>
+            <button>title (z-a)</button>
+            <button>director (a-z)</button>
+            <button>director (z-a)</button>
+            <button>year (oldest)</button>
+            <button>year (newest)</button>
+          </div>
+        </div>
+      </div>
+      <!-- card container -->
+      <div id="card-container"></div>
+    </div>
+
+    <!-- reusable elements. -->
+    <!--card  -->
     <div class="card" style="display: none">
       <div class="card-content">
         <h2 id="title">TV Show Title</h2>
         <img src="" alt="TV Show Poster" />
         <ul class="card-list">
           <li>Director: <span class="card-text" id="director"></span></li>
-          <hr>
-          <li>Main Actors: <div class="card-text"><span id="actor1"></span>, <span id="actor2"></span></div></li>
-          <hr>
+          <hr />
+          <li>
+            Main Actors:
+            <div class="card-text">
+              <span id="actor1"></span>, <span id="actor2"></span>
+            </div>
+          </li>
+          <hr />
           <li>Release year: <span class="card-text" id="year"></span></li>
-          <hr>
+          <hr />
           <!-- this one will have to do some kind of trick. Think -->
-          <li>Genres: <div id="genres"></div></li>
-          <hr>
+          <li>
+            Genres:
+            <div id="genres"></div>
+          </li>
+          <hr />
         </ul>
       </div>
     </div>
     <div class="footer">
-      <button onclick="quoteAlert();">Get A Quote!</button>
-      <button onclick="removeLastCard();">Remove A Card!</button>
+      <!-- add a form that allows to add a new movie card for the user. -->
+      <div id="card-creator-container">
+        <h1>
+          Found a classic trailer that was the first one to be released? feel
+          free to support
+        </h1>
+        <form id="card-creator" action="">
+          <!-- title input -->
+          <label for="title">Title:</label>
+          <input type="text" id="title" placeholder="Movie Title" />
+          <!-- movie cover link image -->
+          <label for="cover_image_url">Movie Cover:</label>
+          <input type="text" id="cover_image_url" placeholder="link of movie cover image" />
+          <!-- year of the movie released -->
+          <label for="year">Release Year:</label>
+          <input type="text" id="year" placeholder="Release Year of the Movie" />
+          <!-- director of the movie -->
+          <label for="director">Movie Director:</label>
+          <input type="text" id="director" placeholder="Movie Director" />
+          <!-- actor 1 & actor 2-->
+          <label for="actor1">Main Actor/Actress 1:</label>
+          <input type="text" id="actor1" placeholder="Main Actor/Actress 1" />
+          <label for="actor2">Main Actor/Actress 2:</label>
+          <input type="text" id="actor2" placeholder="Main Actor/Actress 2" />
+          <!-- genres -->
+          <label for="genre1">Genre 1:</label>
+          <input type="text" id="genre1" placeholder="Movie Genre 1" />
+          <label for="genre2">Genre 2:</label>
+          <input type="text" id="genre2" placeholder="Movie Genre 2" />
+          <label for="genre3">Genre 3:</label>
+          <input type="text" id="genre3" placeholder="Movie Genre 3" />
+          <!-- youtube video -->
+          
+          <label for="url_video">Link to the very first movie trailer:</label>
+          <input type="text" id="url_video" placeholder="Link to first movie trailer" />
+        </form>
+        <div>
+          <!-- we may have to remove this one -->
+          <button onclick="addNewCard();">Add new Card!</button>
+          <button onclick="removeLastCard();">Remove A Card!</button>
+        </div>
+      </div>
     </div>
   </body>
 </html>
