@@ -2,7 +2,18 @@ html,
 body {
   margin: 0;
   padding: 0;
+  padding-left: 10px;
+  padding-right: 10px;
 }
+
+.main-body{
+  display: flex;
+}
+
+
+/*
+** header components
+*/
 
 .main-header {
   background-color: rgba(0, 0, 0, 0.3);
@@ -18,14 +29,119 @@ body {
   color: white;
 }
 
+/**
+** sidebar components
+*/
+#sidebar{
+  padding-top: 10px;
+  background-color: greenyellow;
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  font-family: sans-serif;
+  row-gap: 10px;
+}
+
+#genre-filter-container{
+  display: flex;
+  flex-direction: column;
+  background-color: orange;
+  align-items: center;
+  justify-items: center;
+  border-radius: 10px;
+  text-align: center;
+  padding-bottom: 10px;
+  row-gap: 0px;
+}
+#genre-filter-container h4{
+  padding: 0px;
+}
+
+#filter-options{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  row-gap: 5px;
+  column-gap: 5px;
+  padding-left:5px;
+  padding-right:5px; 
+}
+
+#filter-options button{
+  font-size: 15px;
+  padding-left: 7px;
+  padding-right: 7px;
+  border-radius: 20px;
+  margin: 0;
+}
+
+#filter-options button:hover{
+  background-color: white;
+  color:black;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+  padding-left: 7px;
+  padding-right: 7px;
+  border-radius: 20px;
+}
+
+/* we have to create a selected button style for the filtering */
+
+#sort-list-container{
+  background-color: red;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-items: center;
+  border-radius: 10px;
+  text-align: center;
+  padding-bottom: 10px;
+  row-gap: 0px;
+  padding-left: 10px;
+}
+
+#buttons-container{
+  display: flex;
+  flex-direction: row;
+  row-gap: 10px;
+  flex-wrap: wrap;
+}
+
+#sort-options button{
+  font-size: 15px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-radius: 20px;
+}
+
+#sort-options button:hover{
+  background-color: white;
+  color:black;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-radius: 20px;
+}
+
+/* we have to create a selected button style for the sort */
+
+
+
+
+
+/*
+** card-container components
+*/
 #card-container {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  margin: 20px;
-  
-  /*  */
+  background-color: aquamarine;
 }
+
 li{
   font-weight: bold;
 }
@@ -35,7 +151,7 @@ li{
 }
 
 .card {
-  width: 300px;
+  width: 250px;
   border: 1px solid #ccc;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -50,7 +166,6 @@ li{
 
 .card-list{
   padding: 0px 15px 0px 15px;
-  /* background-color: greenyellow; */
 }
 
 .card-text{
@@ -71,6 +186,10 @@ li{
   width: 100%;
   height: auto;
 }
+
+/**
+** footer components
+*/
 
 .footer {
   display: flex;
