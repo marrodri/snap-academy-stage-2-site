@@ -155,14 +155,77 @@ document.addEventListener("DOMContentLoaded", async () => {
   showCards();
 });
 
-function quoteAlert() {
-  console.log("Button Clicked!");
-  alert(
-    "I guess I can kiss heaven goodbye, because it got to be a sin to look this good!"
-  );
+function filterCards(){
+  // we will filter the cards based on the 
+  //selected genre.
+  //we will iterate each card, where we will 
+  // check their genres. 
+  // if a card doesn't have the genres, we will set that to invisible.
+  
+  //otherwise, we just skip that card.
+}
+
+function sortCardsAlphabetically(){
+  // sort cards alphabetically,
+  // if by title or by director.
+}
+
+function sortCardsByYear(){
+  // sort the cards by year
+}
+
+function searchData(){
+  console.log("searching for data");
+  // when the keyboard is pressed.
+  //we will filter out the data.
+  //first we set the state to search.
+  //on the search state, just use the temporary array 
+  // that is filtered, based on the search input.
+  //otherwise, if the search state is empty; go back to the original data. 
+}
+
+function addNewCard(){
+  console.log("adding new card");
+  // todo get the information from the form
+  let form = document.getElementById("card-creator-form");
+  
+  // fetching the data from the form
+  let title = form.elements["title"].value;
+  console.log("title: "+title);
+  let image_url = form.elements["cover_image_url"].value;
+  console.log("image_url: "+image_url);
+
+  let year = form.elements["year"].value;
+  console.log("year: "+year);
+  
+  let director = form.elements["director"].value;
+  console.log("director: "+director);
+  
+  let actor1 = form.elements["actor1"].value;
+  console.log("actor2: "+actor1 );
+  
+  let actor2 = form.elements["actor2"].value;
+  console.log("actor2: "+actor2);
+  
+  let genre1 = form.elements["genre1"].value;
+  console.log("genre1: "+genre1);
+  
+  let genre2 = form.elements["genre2"].value;
+  console.log("genre2: "+genre2);
+  
+  let genre3 = form.elements["genre3"].value;
+  console.log("genre3: "+genre3);
+  
+  let video_url = form.elements["video_url"].value;
+  console.log("video_url: "+video_url);
+
+  // create the new card from the form.
+
+  // clear the data from the form.
+  
 }
 
 function removeLastCard() {
-  titles.pop(); // Remove last item in titles array
+  movie_cards.pop(); // Remove last item in titles array
   showCards(); // Call showCards again to refresh
 }
