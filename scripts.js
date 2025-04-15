@@ -23,32 +23,37 @@
  *
  */
 
-
 /**
  * Instatiating the required variables.
  */
 
 let movie_cards = [];
+let filtered_movie_cards = [];
 let json_data = [];
-let filters = [];
+let genre_filters = [];
+let isGenreFilterActive = [];
 
 /***
- * website methods
+ * Setup and update data methods
  */
 
+function update() {
+  // shows the most recent cards.
+  showCards(movie_cards);
+  //updating the genres based on the front-end.
+  updateGenreFilters();
+}
+
 // This function adds cards the page to display the data in the array
-function showCards() {
+function showCards(movie_card_list) {
   const cardContainer = document.getElementById("card-container");
   cardContainer.innerHTML = "";
   //select the .card element structure from html
   const templateCard = document.querySelector(".card");
 
   console.log("calling showCards method");
-  //   movie_cards.length
-  for (let i = 0; i < 10; i++) {
-    let id = movie_cards[i].id;
-    let card = movie_cards[i];
-    console.log(card);
+  movie_card_list.forEach((card) => {
+    let id = card.id;
     let title = card.title;
     let imageURL = card.cover_image_url;
     let releaseYear = card.year;
@@ -59,59 +64,75 @@ function showCards() {
     console.log("printing the image url: ", imageURL);
 
     const nextCard = templateCard.cloneNode(true); // Copy the template card
-    editCardContent(nextCard,id, title, imageURL, releaseYear, 
-        genres, mainActors, director); // Edit title and image on the cloned template card
+    editCardContent(
+      nextCard,
+      id,
+      title,
+      imageURL,
+      releaseYear,
+      genres,
+      mainActors,
+      director
+    ); // Edit title and image on the cloned template card
     cardContainer.appendChild(nextCard); // Add new card to the container
-  }
+  });
 }
 
 // edit the title and image of the card that is
 // going to be displayed.
-function editCardContent(card, id, newTitle, newImageURL, newReleaseYear, newGenres, newMainActors, newDirector) {
-    //set the display for the card
-    card.style.display = "block";
-    // set the id for the card, 
-    // for fetching the right data when interacting in the front-end site
-    card.id = id; 
+function editCardContent(
+  card,
+  id,
+  newTitle,
+  newImageURL,
+  newReleaseYear,
+  newGenres,
+  newMainActors,
+  newDirector
+) {
+  //set the display for the card
+  card.style.display = "block";
+  // set the id for the card,
+  // for fetching the right data when interacting in the front-end site
+  card.id = id;
+  // set the title for the card
+  const cardHeader = card.querySelector("#title");
+  cardHeader.textContent = newTitle;
 
-    // set the title for the card
-    const cardHeader = card.querySelector("#title");
-    cardHeader.textContent = newTitle;
+  //set the image in the card
+  const cardImage = card.querySelector("img");
+  cardImage.src = newImageURL;
+  cardImage.alt = newTitle + " Poster";
 
-    //set the image in the card
-    const cardImage = card.querySelector("img");
-    cardImage.src = newImageURL;
-    cardImage.alt = newTitle + " Poster";
+  //set the release year
+  const cardYear = card.querySelector("#year");
+  cardYear.textContent = newReleaseYear;
 
-    //set the release year
-    const cardYear = card.querySelector("#year"); 
-    cardYear.textContent = newReleaseYear;
+  //set the director
+  const cardDirector = card.querySelector("#director");
+  cardDirector.textContent = newDirector;
 
-    //set the director
-    const cardDirector = card.querySelector("#director");
-    cardDirector.textContent = newDirector;
+  //set the actors
+  const cardActor1 = card.querySelector("#actor1");
+  cardActor1.textContent = newMainActors[0];
+  const cardActor2 = card.querySelector("#actor2");
+  cardActor2.textContent = newMainActors[1];
 
-    //set the actors
-    const cardActor1 = card.querySelector("#actor1");
-    cardActor1.textContent = newMainActors[0];
-    const cardActor2 = card.querySelector("#actor2");
-    cardActor2.textContent = newMainActors[1];
+  //set the genres, if there's any genre added.
+  console.log("setting the genres: ", newGenres);
+  const cardGenres = card.querySelector("#genres");
+  newGenres.forEach((genre, i) => {
+    //creating our new genre element for front-end
+    const newGenre = document.createElement("span");
+    newGenre.className = "card-text";
+    newGenre.textContent = genre + (i == newGenres.length - 1 ? " " : ", ");
+    cardGenres.appendChild(newGenre);
+  });
 
-    //set the genres, if there's any genre added.
-    console.log("setting the genres: ", newGenres);
-    const cardGenres = card.querySelector("#genres");
-    newGenres.forEach((genre,i )=> {
-        //creating our new genre element for front-end
-        const newGenre = document.createElement("span");
-        newGenre.className="card-text";
-        newGenre.textContent = (genre+(i == newGenres.length-1? " " : ", "));
-        cardGenres.appendChild(newGenre);
-    });
-
-    // You can use console.log to help you debug!
-    // View the output by right clicking on your website,
-    // select "Inspect", then click on the "Console" tab
-    console.log("new card:", newTitle, "- html: ", card);
+  // You can use console.log to help you debug!
+  // View the output by right clicking on your website,
+  // select "Inspect", then click on the "Console" tab
+  console.log("new card:", newTitle, "- html: ", card);
 }
 
 async function init() {
@@ -147,43 +168,124 @@ async function init() {
 // calling our initialization method and display cards, once the page is loaded.
 document.addEventListener("DOMContentLoaded", async () => {
   await init();
-  showCards();
+  update();
 });
 
-function filterCards(){
-  // we will filter the cards based on the 
-  //selected genre.
-  //we will iterate each card, where we will 
-  // check their genres. 
-  // if a card doesn't have the genres, we will set that to invisible.
-  
-  //otherwise, we just skip that card.
+/***
+ * Filter methods
+ */
+
+function onClickFilterButton(e) {
+  // once we run this method.
+  //first we have to get the id of the button that was clicked.
+  //and toggle the filter for that genre.
+  // and then we will iterate the main database to create a copy
+  // of the filtered data.
+  //and then displayed the filtered data.
+  //in case if there's no active filter,
+  // use the original complete data instead.
+
+  console.log("button has been clicked\n :)");
+  console.log(e.target.textContent);
+  console.log(e.target.id);
+  filtered_movie_cards = [];
+  //togglging filter.
+  isGenreFilterActive[e.target.id] != isGenreFilterActive[e.target.id];
+
+  if (e.target.textContent == "Clear Filter") {
+    showCards(movie_cards);
+  } else {
+    movie_cards.forEach((card) => {
+      console.log(card);
+      if (card.genres.includes(e.target.textContent)) {
+        filtered_movie_cards.push(card);
+      }
+    });
+    showCards(filtered_movie_cards);
+  }
 }
 
-function sortCardsAlphabetically(){
+function updateGenreFilters() {
+  // getting the filter-options element from html
+  const filterOptions = document.querySelector("#filter-options");
+  let newGenreFilterTogglers = [];
+  // getting the available genres from the movie cards
+  movie_cards.forEach((card) => {
+    card.genres.forEach((genre) => {
+      if (!genre_filters.includes(genre)) {
+        genre_filters.push(genre);
+      }
+    });
+  });
+  console.log("genres filtered setup");
+  console.log(genre_filters);
+
+  isGenreFilterActive = newGenreFilterTogglers;
+
+  // create the filter options buttons and
+  // place them on the filter-options element.
+  genre_filters.forEach((genre, i) => {
+    if (genre != "") {
+      const newButton = document.createElement("button");
+      // create button element.
+      newButton.textContent = genre;
+      newButton.id = i;
+      newButton.addEventListener("click", (e) => {
+        onClickFilterButton(e);
+      });
+      console.log(newButton);
+      // add the genre value to the button
+      filterOptions.appendChild(newButton);
+      newGenreFilterTogglers.push(false);
+    }
+  });
+  //push a "clear filter" button.
+  const newButton = document.createElement("button");
+  newButton.textContent = "Clear Filter";
+  newButton.id = genre_filters.length;
+  newButton.addEventListener("click", (e) => {
+    onClickFilterButton(e);
+  });
+  filterOptions.appendChild(newButton);
+  newGenreFilterTogglers.push(false);
+  isGenreFilterActive = newGenreFilterTogglers;
+}
+
+/***
+ * sorting methods
+ */
+function sortCardsAlphabetically() {
   // sort cards alphabetically,
   // if by title or by director.
 }
 
-function sortCardsByYear(){
+function sortCardsByYear() {
   // sort the cards by year
 }
 
-function searchData(){
+/***
+ * Search methods
+ */
+
+function searchData() {
   console.log("searching for data");
   // when the keyboard is pressed.
   //we will filter out the data.
   //first we set the state to search.
-  //on the search state, just use the temporary array 
+  //on the search state, just use the temporary array
   // that is filtered, based on the search input.
-  //otherwise, if the search state is empty; go back to the original data. 
+  //otherwise, if the search state is empty; go back to the original data.
 }
 
-function addNewCard(){
+/***
+ * Form methods
+ */
+
+function addNewCard() {
   console.log("adding new card");
   // todo get the information from the form
   let form = document.getElementById("card-creator-form");
-  
+
   // fetching the elements from the form
   let title = form.elements["title"];
   let cover_image_url = form.elements["cover_image_url"];
@@ -197,7 +299,6 @@ function addNewCard(){
   let genre3 = form.elements["genre3"];
   let video_url = form.elements["video_url"];
 
-  
   // create the new card from the data inputed in the form.
   movie_cards.push({
     id: movie_cards.length,
@@ -205,11 +306,11 @@ function addNewCard(){
     cover_image_url: cover_image_url.value,
     director: director.value,
     year: year.value,
-    genres: [genre1.value, genre2.value, genre3.value], 
+    genres: [genre1.value, genre2.value, genre3.value],
     main_actors: [actor1.value, actor2.value],
     video_url: video_url.value,
-  })
-  showCards(); 
+  });
+  update();
 
   // clear the data from the form.
   title.value = "";
@@ -222,7 +323,6 @@ function addNewCard(){
   genre2.value = "";
   genre3.value = "";
   video_url.value = "";
-  
 }
 
 function removeLastCard() {
