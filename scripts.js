@@ -23,22 +23,10 @@
  *
  */
 
-/**
- * Predefined data from template; delete this later.
- */
-const FRESH_PRINCE_URL =
-  "https://upload.wikimedia.org/wikipedia/en/3/33/Fresh_Prince_S1_DVD.jpg";
-const CURB_POSTER_URL =
-  "https://m.media-amazon.com/images/M/MV5BZDY1ZGM4OGItMWMyNS00MDAyLWE2Y2MtZTFhMTU0MGI5ZDFlXkEyXkFqcGdeQXVyMDc5ODIzMw@@._V1_FMjpg_UX1000_.jpg";
-const EAST_LOS_HIGH_POSTER_URL =
-  "https://static.wikia.nocookie.net/hulu/images/6/64/East_Los_High.jpg";
 
 // TODO:
 /**
 * 3.- create a quick form that you can add a new movie.
-* 4.- create header and footer for better accessibility and sidebar.
-* 5.- create a search bar to filter the movies(this should be on the header).
-* 6.- a sidebar with filter options.
 
 */
 
@@ -63,10 +51,11 @@ function showCards() {
   console.log("calling showCards method");
   //   movie_cards.length
   for (let i = 0; i < 10; i++) {
+    let id = movie_cards[i].id;
     let card = movie_cards[i];
     console.log(card);
     let title = card.title;
-    let imageURL = card.cover_image;
+    let imageURL = card.cover_image_url;
     let releaseYear = card.year;
     let genres = card.genres;
     let mainActors = card.main_actors;
@@ -75,7 +64,7 @@ function showCards() {
     console.log("printing the image url: ", imageURL);
 
     const nextCard = templateCard.cloneNode(true); // Copy the template card
-    editCardContent(nextCard, title, imageURL, releaseYear, 
+    editCardContent(nextCard,id, title, imageURL, releaseYear, 
         genres, mainActors, director); // Edit title and image on the cloned template card
     cardContainer.appendChild(nextCard); // Add new card to the container
   }
@@ -83,9 +72,12 @@ function showCards() {
 
 // edit the title and image of the card that is
 // going to be displayed.
-function editCardContent(card, newTitle, newImageURL, newReleaseYear, newGenres, newMainActors, newDirector) {
-    //the the display for the card
+function editCardContent(card, id, newTitle, newImageURL, newReleaseYear, newGenres, newMainActors, newDirector) {
+    //set the display for the card
     card.style.display = "block";
+    // set the id for the card, 
+    // for fetching the right data when interacting in the front-end site
+    card.id = id; 
 
     // set the title for the card
     const cardHeader = card.querySelector("#title");
@@ -140,8 +132,9 @@ async function init() {
     // creating an object for each movie card
     // and pushing it to the movie_cards array
     let movie_card = {
+      id: i,
       title: json_data[i].title,
-      cover_image: json_data[i].cover_image,
+      cover_image_url: json_data[i].cover_image_url,
       director: json_data[i].director,
       year: json_data[i].year,
       genres: json_data[i].genres,

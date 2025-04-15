@@ -73,7 +73,8 @@ body {
   font-size: 1.5em;
   font-family: "Helvetica";
   font-weight: normal;
-  color: white;}
+  color: white;
+}
 
 /**
 ** sidebar components
@@ -100,7 +101,7 @@ body {
   row-gap: 0px;
 }
 
-#search-container input[type=text] {
+input[type=text] {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -291,8 +292,21 @@ li{
 
 .footer {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   background-color: rgba(0, 0, 0, 0.3);
+  padding: 10px;
+}
+
+#card-creator-container{
+  background-color: beige;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0;
+  font-family: "Helvetica";
+  border-radius: 10px;
   padding: 10px;
 }
 
