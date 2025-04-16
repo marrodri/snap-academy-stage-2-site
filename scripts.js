@@ -30,6 +30,7 @@
 let movie_cards = [];
 let searched_movie_cards = [];
 let filtered_movie_cards = [];
+let sorted_movie_cards = [];
 let json_data = [];
 let genre_filters = [];
 let isGenreFilterActive = [];
@@ -178,25 +179,16 @@ document.addEventListener("DOMContentLoaded", async () => {
  */
 
 function onClickFilterButton(e) {
-  // once we run this method.
-  //first we have to get the id of the button that was clicked.
-  //and toggle the filter for that genre.
-  // and then we will iterate the main database to create a copy
-  // of the filtered data.
-  //and then displayed the filtered data.
-  //in case if there's no active filter,
-  // use the original complete data instead.
-
-  console.log("button has been clicked\n :)");
-  console.log(e.target.textContent);
-  console.log(e.target.id);
   filtered_movie_cards = [];
-  //togglging filter.
   isGenreFilterActive[e.target.id] != isGenreFilterActive[e.target.id];
 
+  // in case the "clear filter" button is clicked,
+  //go back to its original database.
   if (e.target.textContent == "Clear Filter") {
     showCards(movie_cards);
   } else {
+    //otherwise, filter and display the movie cards
+    // with the desired genre.
     movie_cards.forEach((card) => {
       console.log(card);
       if (card.genres.includes(e.target.textContent)) {
@@ -256,26 +248,55 @@ function updateGenreFilters() {
 /***
  * sorting methods
  */
-function sortCardsAlphabetically() {
+function sortBy(e) {
   // sort cards alphabetically,
   // if by title or by director.
+  const sortOption = e.textContent;
+  console.log("sorting method: " + sortOption);
+  if (filtered_movie_cards.length === 0) {
+    filtered_movie_cards = movie_cards;
+  }
+  switch (sortOption) {
+    case "title (a-z)":
+      filtered_movie_cards.sort((a, b) => a.title.localeCompare(b.title));
+      break;
+    case "title (z-a)":
+      filtered_movie_cards.sort((a, b) => b.title.localeCompare(a.title));
+      break;
+    case "director (a-z)":
+      filtered_movie_cards.sort((a, b) => a.director.localeCompare(b.director));
+      break;
+    case "director (z-a)":
+      filtered_movie_cards.sort((a, b) => b.director.localeCompare(a.director));
+      break;
+    case "year (oldest)":
+      console.log("comparing years, oldest to newest");
+      filtered_movie_cards.sort((a, b) => a.year - b.year);
+      break;
+    case "year (newest)":
+      console.log("comparing years newest to oldest");
+      filtered_movie_cards.sort((a, b) => b.year - a.year);
+      break;
+    default:
+      alert("Invalid order");
+      console.error("Invalid order");
+  }
+  showCards(filtered_movie_cards);
 }
 
-function sortCardsByYear() {
-  // sort the cards by year
-}
-
-/***
+/**
  * Search methods
- */
+ **/
 
 function searchData(value) {
-  //if there's an empty input, display the original data.
+  // if there's an empty input,
+  // display the original data.
   if (value === "") {
     showCards(movie_cards);
     isSearchModeActive = false;
   } else {
-    //otherwise, iterate through the movie cards that fits with the entered input.
+    // otherwise, iterate through the movie cards
+    // that fits with the entered input.
     isSearchModeActive = true;
     searched_movie_cards = [];
     value = value.toLowerCase();
@@ -344,5 +365,5 @@ function addNewCard() {
 
 function removeLastCard() {
   movie_cards.pop(); // Remove last item in titles array
-  showCards(); // Call showCards again to refresh
+  update(); // Call update again to refresh cards and genres
 }

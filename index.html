@@ -31,13 +31,13 @@
       <div id="sidebar">
         <!-- search container-->
         <div class="sidebar-container" id="search-container">
-          <h4>Search:</h4>
+          <h4>Search through movie title, director or actor:</h4>
           <div>
             <input
               onkeyup="searchData(this.value)"
               type="text"
               id="search-input"
-              placeholder="Search through movie title, director or actor"
+              placeholder="Search..."
             />
           </div>
         </div>
@@ -50,12 +50,12 @@
         <div id="sort-list-container">
           <h4>sort by</h4>
           <div id="sort-options">
-            <button>title (a-z)</button>
-            <button>title (z-a)</button>
-            <button>director (a-z)</button>
-            <button>director (z-a)</button>
-            <button>year (oldest)</button>
-            <button>year (newest)</button>
+            <button onclick="sortBy(this)">title (a-z)</button>
+            <button onclick="sortBy(this)">title (z-a)</button>
+            <button onclick="sortBy(this)">director (a-z)</button>
+            <button onclick="sortBy(this)">director (z-a)</button>
+            <button onclick="sortBy(this)">year (oldest)</button>
+            <button onclick="sortBy(this)">year (newest)</button>
           </div>
         </div>
       </div>
