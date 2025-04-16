@@ -13,7 +13,7 @@
             "Mark Hamill",
             "Harrison Ford"
         ],
-        "url_video": "https://www.youtube.com/watch?v=XHk5kCIiGoM"
+        "movie_trailer_url": "https://www.youtube.com/embed/XHk5kCIiGoM"
     },
     {
         "title": "Jaws",
@@ -28,7 +28,7 @@
             "Roy Scheider",
             "Robert Shaw"
         ],
-        "url_video": "https://www.youtube.com/watch?v=U1fu_sA7XhE"
+        "movie_trailer_url": "https://www.youtube.com/embed/U1fu_sA7XhE"
     },
     {
         "title": "The Godfather",
@@ -43,7 +43,7 @@
             "Marlon Brando",
             "Al Pacino"
         ],
-        "url_video": "https://www.youtube.com/watch?v=1x0GpEZnwa8"
+        "movie_trailer_url": "https://www.youtube.com/embed/1x0GpEZnwa8"
     },
     {
         "title": "Rocky",
@@ -58,7 +58,7 @@
             "Sylvester Stallone",
             "Talia Shire"
         ],
-        "url_video": "https://www.youtube.com/watch?v=-Hk-LYcavrw"
+        "movie_trailer_url": "https://www.youtube.com/embed/-Hk-LYcavrw"
     },
     {
         "title": "Alien",
@@ -73,7 +73,7 @@
             "Sigourney Weaver",
             "Tom Skerritt"
         ],
-        "url_video": "https://www.youtube.com/watch?v=jQ5lPt9edzQ"
+        "movie_trailer_url": "https://www.youtube.com/embed/jQ5lPt9edzQ"
     },
     {
         "title": "Taxi Driver",
@@ -88,7 +88,7 @@
             "Robert De Niro",
             "Jodie Foster"
         ],
-        "url_video": "https://www.youtube.com/watch?v=T5IligQP7Fo"
+        "movie_trailer_url": "https://www.youtube.com/embed/T5IligQP7Fo"
     },
     {
         "title": "Back to the Future",
@@ -104,7 +104,7 @@
             "Michael J. Fox",
             "Christopher Lloyd"
         ],
-        "url_video": "https://www.youtube.com/watch?v=qvsgGtivCgs"
+        "movie_trailer_url": "https://www.youtube.com/embed/qvsgGtivCgs"
     },
     {
         "title": "Blade Runner",
@@ -119,7 +119,7 @@
             "Harrison Ford",
             "Sean Young"
         ],
-        "url_video": "https://www.youtube.com/watch?v=eogpIG53Cis"
+        "movie_trailer_url": "https://www.youtube.com/embed/eogpIG53Cis"
     },
     {
         "title": "Pulp Fiction",
@@ -134,6 +134,6 @@
             "John Travolta",
             "Samuel L. Jackson"
         ],
-        "url_video": "https://www.youtube.com/watch?v=s7EdQ4FqbhY"
+        "movie_trailer_url": "https://www.youtube.com/embed/s7EdQ4FqbhY"
     }
 ]

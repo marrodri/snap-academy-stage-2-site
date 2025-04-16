@@ -13,7 +13,7 @@
 
   <body>
     <!-- make this static, absolute, if it's clicked outside set the module to invisible. THis is  a bonus, so focus on the main requirements. -->
-    <div id="float-module"></div>
+
     <header class="main-header">
       <div id="right-side">
         <div id="logo-container">
@@ -62,6 +62,17 @@
       <!-- card container -->
       <div id="card-container"></div>
     </div>
+    <!-- modal component -->
+    <div onclick="onCloseModal()" class="modal-container" style="display: none">
+      <div class="modal-content">
+        <iframe id="movie-trailer-frame"
+          width="780px"
+          height="480px"
+          src=""
+        >
+        </iframe>
+      </div>
+    </div>
 
     <!-- reusable elements. -->
     <!--card  -->
@@ -81,7 +92,6 @@
           <hr />
           <li>Release year: <span class="card-text" id="year"></span></li>
           <hr />
-          <!-- this one will have to do some kind of trick. Think -->
           <li>
             Genres:
             <div id="genres"></div>
@@ -132,10 +142,10 @@
           <input type="text" id="genre3" placeholder="Movie Genre 3" />
           <!-- youtube video -->
 
-          <label for="video_url">Link to the very first movie trailer:</label>
+          <label for="movie_trailer_url">Link to the very first movie trailer:</label>
           <input
             type="text"
-            id="video_url"
+            id="movie_trailer_url"
             placeholder="Link to first movie trailer"
           />
         </form>

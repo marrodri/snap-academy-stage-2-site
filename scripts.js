@@ -35,6 +35,7 @@ let json_data = [];
 let genre_filters = [];
 let isGenreFilterActive = [];
 let isSearchModeActive = false;
+let isModalComponentActive = false;
 
 /***
  * Setup and update data methods
@@ -98,6 +99,9 @@ function editCardContent(
   // set the id for the card,
   // for fetching the right data when interacting in the front-end site
   card.id = id;
+  card.addEventListener("click", () => {
+    onClickMovieCard(id);
+  });
   // set the title for the card
   const cardHeader = card.querySelector("#title");
   cardHeader.textContent = newTitle;
@@ -158,6 +162,7 @@ async function init() {
       year: json_data[i].year,
       genres: json_data[i].genres,
       main_actors: json_data[i].main_actors,
+      movie_trailer_url: json_data[i].movie_trailer_url,
     };
     //pushing the new created movie card object
     //to our list of movie cards.
@@ -173,6 +178,34 @@ document.addEventListener("DOMContentLoaded", async () => {
   await init();
   update();
 });
+
+/**
+ ** modal component features
+ */
+function onClickMovieCard(id){
+  // const 
+  // const cardId = e.target;
+  console.log("clicking the movie card. "+id);
+  const modalContainer = document.querySelector(".modal-container");
+  const movieTrailerFrame = document.querySelector("#movie-trailer-frame");
+  modalContainer.style.display = "flex";
+  console.log("setting the video of movie:"+movie_cards[id].title);
+  console.log("url of movie:"+movie_cards[id].movie_trailer_url);
+  movieTrailerFrame.src = movie_cards[id].movie_trailer_url;
+
+
+
+
+  
+}
+function onCloseModal(){
+  console.log("closing modal");
+  const modalContainer = document.querySelector(".modal-container");
+  const movieTrailerFrame = document.querySelector("#movie-trailer-frame");
+  modalContainer.style.display = "none";
+  movieTrailerFrame.src = "";
+
+}
 
 /***
  * Filter methods
@@ -249,10 +282,8 @@ function updateGenreFilters() {
  * sorting methods
  */
 function sortBy(e) {
-  // sort cards alphabetically,
-  // if by title or by director.
   const sortOption = e.textContent;
-  console.log("sorting method: " + sortOption);
+
   if (filtered_movie_cards.length === 0) {
     filtered_movie_cards = movie_cards;
   }
@@ -270,11 +301,9 @@ function sortBy(e) {
       filtered_movie_cards.sort((a, b) => b.director.localeCompare(a.director));
       break;
     case "year (oldest)":
-      console.log("comparing years, oldest to newest");
       filtered_movie_cards.sort((a, b) => a.year - b.year);
       break;
     case "year (newest)":
-      console.log("comparing years newest to oldest");
       filtered_movie_cards.sort((a, b) => b.year - a.year);
       break;
     default:
@@ -320,8 +349,7 @@ function searchData(value) {
  */
 
 function addNewCard() {
-  console.log("adding new card");
-  // todo get the information from the form
+  //get the information from the form
   let form = document.getElementById("card-creator-form");
 
   // fetching the elements from the form
@@ -335,7 +363,7 @@ function addNewCard() {
   let genre1 = form.elements["genre1"];
   let genre2 = form.elements["genre2"];
   let genre3 = form.elements["genre3"];
-  let video_url = form.elements["video_url"];
+  let movie_trailer_url = form.elements["movie_trailer_url"];
 
   // create the new card from the data inputed in the form.
   movie_cards.push({
@@ -346,7 +374,7 @@ function addNewCard() {
     year: year.value,
     genres: [genre1.value, genre2.value, genre3.value],
     main_actors: [actor1.value, actor2.value],
-    video_url: video_url.value,
+    movie_trailer_url: movie_trailer_url.value,
   });
   update();
 
@@ -360,7 +388,7 @@ function addNewCard() {
   genre1.value = "";
   genre2.value = "";
   genre3.value = "";
-  video_url.value = "";
+  movie_trailer_url.value = "";
 }
 
 function removeLastCard() {
