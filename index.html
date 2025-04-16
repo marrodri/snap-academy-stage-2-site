@@ -12,11 +12,9 @@
   </head>
 
   <body>
+    <!-- make this static, absolute, if it's clicked outside set the module to invisible. THis is  a bonus, so focus on the main requirements. -->
+
     <header class="main-header">
-      <!-- think about a work around with the title.
-       it can lead to confusion -->
-      <!-- add a text input that will work as the search bar
-         -->
       <div id="right-side">
         <div id="logo-container">
           <img id="logo-img" src="./assets/movie-trailer-img.png" alt="" />
@@ -33,49 +31,47 @@
       <div id="sidebar">
         <!-- search container-->
         <div class="sidebar-container" id="search-container">
-          <h4>Search:</h4>
+          <h4>Search through movie title, director or actor:</h4>
           <div>
             <input
+              onkeyup="searchData(this.value)"
               type="text"
               id="search-input"
-              placeholder="Search for any info..."
+              placeholder="Search..."
             />
           </div>
         </div>
         <!-- filtering options container -->
         <div id="genre-filter-container">
           <h4>Filter by genre</h4>
-          <div id="filter-options">
-            <button>Thriller</button>
-            <button>Family</button>
-            <button>Romance</button>
-            <button>Comedy</button>
-            <button>Adventure</button>
-            <button>Science Fiction</button>
-            <button>Action</button>
-            <button>Romance</button>
-            <button>Family</button>
-            <button>Action</button>
-            <button>Science Fiction</button>
-            <button>Adventure</button>
-            <button>Comedy</button>
-          </div>
+          <div id="filter-options"></div>
         </div>
         <!-- sorting options container -->
         <div id="sort-list-container">
           <h4>sort by</h4>
           <div id="sort-options">
-            <button>title (a-z)</button>
-            <button>title (z-a)</button>
-            <button>director (a-z)</button>
-            <button>director (z-a)</button>
-            <button>year (oldest)</button>
-            <button>year (newest)</button>
+            <button onclick="sortBy(this)">title (a-z)</button>
+            <button onclick="sortBy(this)">title (z-a)</button>
+            <button onclick="sortBy(this)">director (a-z)</button>
+            <button onclick="sortBy(this)">director (z-a)</button>
+            <button onclick="sortBy(this)">year (oldest)</button>
+            <button onclick="sortBy(this)">year (newest)</button>
           </div>
         </div>
       </div>
       <!-- card container -->
       <div id="card-container"></div>
+    </div>
+    <!-- modal component -->
+    <div onclick="onCloseModal()" class="modal-container" style="display: none">
+      <div class="modal-content">
+        <iframe id="movie-trailer-frame"
+          width="780px"
+          height="480px"
+          src=""
+        >
+        </iframe>
+      </div>
     </div>
 
     <!-- reusable elements. -->
@@ -96,7 +92,6 @@
           <hr />
           <li>Release year: <span class="card-text" id="year"></span></li>
           <hr />
-          <!-- this one will have to do some kind of trick. Think -->
           <li>
             Genres:
             <div id="genres"></div>
@@ -112,16 +107,24 @@
           Found a classic trailer that was the first one to be released? feel
           free to support
         </h1>
-        <form id="card-creator" action="">
+        <form id="card-creator-form" action="">
           <!-- title input -->
           <label for="title">Title:</label>
           <input type="text" id="title" placeholder="Movie Title" />
           <!-- movie cover link image -->
           <label for="cover_image_url">Movie Cover:</label>
-          <input type="text" id="cover_image_url" placeholder="link of movie cover image" />
+          <input
+            type="text"
+            id="cover_image_url"
+            placeholder="link of movie cover image"
+          />
           <!-- year of the movie released -->
           <label for="year">Release Year:</label>
-          <input type="text" id="year" placeholder="Release Year of the Movie" />
+          <input
+            type="text"
+            id="year"
+            placeholder="Release Year of the Movie"
+          />
           <!-- director of the movie -->
           <label for="director">Movie Director:</label>
           <input type="text" id="director" placeholder="Movie Director" />
@@ -138,9 +141,13 @@
           <label for="genre3">Genre 3:</label>
           <input type="text" id="genre3" placeholder="Movie Genre 3" />
           <!-- youtube video -->
-          
-          <label for="url_video">Link to the very first movie trailer:</label>
-          <input type="text" id="url_video" placeholder="Link to first movie trailer" />
+
+          <label for="movie_trailer_url">Link to the very first movie trailer:</label>
+          <input
+            type="text"
+            id="movie_trailer_url"
+            placeholder="Link to first movie trailer"
+          />
         </form>
         <div>
           <!-- we may have to remove this one -->
