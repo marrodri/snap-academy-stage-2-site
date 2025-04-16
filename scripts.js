@@ -351,6 +351,10 @@ function addNewCard() {
     alert("Please enter a title");
     return;
   }
+  if(year.value==="" || year.value.length !== 4 || isNaN(Number(year.value))){
+    alert("Please enter a valid year");
+    return;
+  }
   if(cover_image_url.value===""){
     alert("Please add a cover image url of the movie");
     return;
@@ -368,17 +372,21 @@ function addNewCard() {
     return;
   }
   // youtube url validation
+  if(movie_trailer_url.value.length!==43|| movie_trailer_url.value===""){
+    alert("Please enter a valid youtube url");
+    return;
+  }
   let valid_url = movie_trailer_url.value.substring(0,32)
   let youtube_id = movie_trailer_url.value.substring(32,43)
-  if(valid_url==="https://www.youtube.com/watch?v=\n" && youtube_id.length ===11){
+  if(valid_url!=="https://www.youtube.com/watch?v=" || youtube_id.length !==11){
     alert("Please enter a valid youtube url");
     return;
   }
 
-  //properly convert the youtube url to a proper format.
+  //properly convert the youtube url to a embeded format.
   let video_url_formatted = "https://www.youtube.com/embed/"+ youtube_id
-  // create the new card from the data inputed in the form.
 
+  // create the new card from the data inputed in the form.
   movie_cards.push({
     id: movie_cards.length,
     title: title.value,
