@@ -243,6 +243,7 @@ input[type=text] {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  width: 80%;
   background-color: rgb(80, 79, 79);
   padding-top: 10px;
   padding-bottom: 10px;

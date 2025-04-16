@@ -33,9 +33,7 @@ let filtered_movie_cards = [];
 let sorted_movie_cards = [];
 let json_data = [];
 let genre_filters = [];
-let isGenreFilterActive = [];
 let isSearchModeActive = false;
-let isModalComponentActive = false;
 
 /***
  * Setup and update data methods
@@ -57,6 +55,7 @@ function showCards(movie_card_list) {
 
   console.log("calling showCards method");
   movie_card_list.forEach((card) => {
+    console.log("displaying card title: ",card.title, ", id: ",card.id);
     let id = card.id;
     let title = card.title;
     let imageURL = card.cover_image_url;
@@ -64,8 +63,7 @@ function showCards(movie_card_list) {
     let genres = card.genres;
     let mainActors = card.main_actors;
     let director = card.director;
-    console.log("printing the title: ", title);
-    console.log("printing the image url: ", imageURL);
+    let movieTrailerURL = card.movie_trailer_url;
 
     const nextCard = templateCard.cloneNode(true); // Copy the template card
     editCardContent(
@@ -76,7 +74,8 @@ function showCards(movie_card_list) {
       releaseYear,
       genres,
       mainActors,
-      director
+      director,
+      movieTrailerURL
     ); // Edit title and image on the cloned template card
     cardContainer.appendChild(nextCard); // Add new card to the container
   });
@@ -92,7 +91,8 @@ function editCardContent(
   newReleaseYear,
   newGenres,
   newMainActors,
-  newDirector
+  newDirector,
+  movieTrailerURL
 ) {
   //set the display for the card
   card.style.display = "block";
@@ -100,7 +100,7 @@ function editCardContent(
   // for fetching the right data when interacting in the front-end site
   card.id = id;
   card.addEventListener("click", () => {
-    onClickMovieCard(id);
+    onClickMovieCard(movieTrailerURL);
   });
   // set the title for the card
   const cardHeader = card.querySelector("#title");
@@ -149,8 +149,6 @@ async function init() {
     .then((response) => response.json())
     .then((json) => (json_data = json));
 
-  console.log("setting the fetched data to an array of objects");
-
   for (let i = 0; i < json_data.length; i++) {
     // creating an object for each movie card
     // and pushing it to the movie_cards array
@@ -166,7 +164,6 @@ async function init() {
     };
     //pushing the new created movie card object
     //to our list of movie cards.
-    console.log("new movie card:" + movie_card);
     movie_cards.push(movie_card);
   }
   //checking for one movie card.
@@ -182,38 +179,29 @@ document.addEventListener("DOMContentLoaded", async () => {
 /**
  ** modal component features
  */
-function onClickMovieCard(id){
-  // const 
-  // const cardId = e.target;
-  console.log("clicking the movie card. "+id);
+
+//open modal with embedded video when clicking the movie card
+function onClickMovieCard(movieTrailerURL) {
   const modalContainer = document.querySelector(".modal-container");
   const movieTrailerFrame = document.querySelector("#movie-trailer-frame");
   modalContainer.style.display = "flex";
-  console.log("setting the video of movie:"+movie_cards[id].title);
-  console.log("url of movie:"+movie_cards[id].movie_trailer_url);
-  movieTrailerFrame.src = movie_cards[id].movie_trailer_url;
-
-
-
-
-  
+  movieTrailerFrame.src = movieTrailerURL;
 }
-function onCloseModal(){
-  console.log("closing modal");
+
+// close the modal when clicking outside the boundary
+function onCloseModal() {
   const modalContainer = document.querySelector(".modal-container");
   const movieTrailerFrame = document.querySelector("#movie-trailer-frame");
   modalContainer.style.display = "none";
   movieTrailerFrame.src = "";
-
 }
 
 /***
  * Filter methods
  */
-
 function onClickFilterButton(e) {
   filtered_movie_cards = [];
-  isGenreFilterActive[e.target.id] != isGenreFilterActive[e.target.id];
+  // isGenreFilterActive[e.target.id] != isGenreFilterActive[e.target.id];
 
   // in case the "clear filter" button is clicked,
   //go back to its original database.
@@ -223,7 +211,6 @@ function onClickFilterButton(e) {
     //otherwise, filter and display the movie cards
     // with the desired genre.
     movie_cards.forEach((card) => {
-      console.log(card);
       if (card.genres.includes(e.target.textContent)) {
         filtered_movie_cards.push(card);
       }
@@ -247,8 +234,6 @@ function updateGenreFilters() {
   console.log("genres filtered setup");
   console.log(genre_filters);
 
-  isGenreFilterActive = newGenreFilterTogglers;
-
   // create the filter options buttons and
   // place them on the filter-options element.
   genre_filters.forEach((genre, i) => {
@@ -263,7 +248,6 @@ function updateGenreFilters() {
       console.log(newButton);
       // add the genre value to the button
       filterOptions.appendChild(newButton);
-      newGenreFilterTogglers.push(false);
     }
   });
   //push a "clear filter" button.
@@ -274,11 +258,9 @@ function updateGenreFilters() {
     onClickFilterButton(e);
   });
   filterOptions.appendChild(newButton);
-  newGenreFilterTogglers.push(false);
-  isGenreFilterActive = newGenreFilterTogglers;
 }
 
-/***
+/**
  * sorting methods
  */
 function sortBy(e) {
