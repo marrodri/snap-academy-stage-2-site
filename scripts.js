@@ -346,8 +346,39 @@ function addNewCard() {
   let genre2 = form.elements["genre2"];
   let genre3 = form.elements["genre3"];
   let movie_trailer_url = form.elements["movie_trailer_url"];
+  // validate the form, if its not valid, send an alert.
+  if(title.value===""){
+    alert("Please enter a title");
+    return;
+  }
+  if(cover_image_url.value===""){
+    alert("Please add a cover image url of the movie");
+    return;
+  }
+  if(director.value===""){
+    alert("Please add a director");
+    return;
+  }
+  if(actor1.value===""){
+    alert("Please add at least one actor");
+    return;
+  }
+  if(genre1.value===""){
+    alert("Please add at least one genre");
+    return;
+  }
+  // youtube url validation
+  let valid_url = movie_trailer_url.value.substring(0,32)
+  let youtube_id = movie_trailer_url.value.substring(32,43)
+  if(valid_url==="https://www.youtube.com/watch?v=\n" && youtube_id.length ===11){
+    alert("Please enter a valid youtube url");
+    return;
+  }
 
+  //properly convert the youtube url to a proper format.
+  let video_url_formatted = "https://www.youtube.com/embed/"+ youtube_id
   // create the new card from the data inputed in the form.
+
   movie_cards.push({
     id: movie_cards.length,
     title: title.value,
@@ -356,7 +387,7 @@ function addNewCard() {
     year: year.value,
     genres: [genre1.value, genre2.value, genre3.value],
     main_actors: [actor1.value, actor2.value],
-    movie_trailer_url: movie_trailer_url.value,
+    movie_trailer_url: video_url_formatted,
   });
   update();
 
