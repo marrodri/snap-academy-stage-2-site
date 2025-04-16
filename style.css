@@ -106,7 +106,6 @@ body {
 */
 #sidebar{
   padding-top: 10px;
-  /* background-color: greenyellow; */
   width: 35%;
   display: flex;
   flex-direction: column;
@@ -125,6 +124,15 @@ body {
   padding-bottom: 10px;
   row-gap: 0px;
 }
+
+#search-input{  
+  width: 80%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;}
 
 input[type=text] {
   width: 100%;
@@ -179,13 +187,11 @@ input[type=text] {
   color:black;
   cursor: pointer;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 13.5px;
   padding-left: 7px;
   padding-right: 7px;
   transition: 0.3s;
 }
-
-/* we have to create a selected button style for the filtering */
 
 #sort-list-container{
   background-color: rgb(239, 239, 224);
@@ -229,12 +235,6 @@ input[type=text] {
   padding-right: 5px;
   transition: 0.3s;
 }
-
-/* we have to create a selected button style for the sort */
-
-
-
-
 
 /*
 ** card-container components
